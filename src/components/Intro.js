@@ -1,5 +1,6 @@
 "use client";
 import { TypeAnimation } from "react-type-animation";
+import Image from "next/image";
 import Connections from "./connections";
 
 
@@ -86,13 +87,15 @@ export default function Intro() {
             {/* Neon Border Wrapper */}
             <div className="relative p-[2px] rounded-[30px] bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500">
               {/* Image */}
-              <img
+              <Image
                 src="/assets/myimage.png"
                 alt="Mahnoor Mateen"
+                width={420}
+                height={500}
                 className="
           relative
-          w-105
-          h-125
+          w-[420px]
+          h-[500px]
           object-cover
           rounded-[28px]
           bg-slate-950

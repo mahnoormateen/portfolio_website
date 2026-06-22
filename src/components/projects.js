@@ -1,7 +1,7 @@
 
 import { Globe, Code2, LayoutGrid } from "lucide-react";
 
-export default function AboutMe() {
+export default function Projects() {
   const cards = [
     {
       icon: <Globe size={22} />,
@@ -39,8 +39,8 @@ export default function AboutMe() {
 
   return (
     <section
-      id="about"
-      className="relative min-h-screen overflow-hidden px-6 py-28 "
+      id="projects"
+      className="relative min-h-screen overflow-hidden px-6  "
     >
       {/* Top Line */}
       {/* <div className="absolute top-0 left-0 w-full h-px bg-white/10" /> */}
@@ -49,7 +49,7 @@ export default function AboutMe() {
         {/* Badge */}
         <div className="flex justify-center mb-8">
           <span className="px-5 py-2 rounded-full border border-white/10 bg-white/[0.03] text-xs tracking-[0.2em] text-gray-300 uppercase">
-            About Me
+            Projects
           </span>
         </div>
 
@@ -72,6 +72,64 @@ export default function AboutMe() {
           and the platforms that make them possible at scale.
         </p>
 
+        {/* Cards */}
+        <div className="grid lg:grid-cols-3 gap-6 mt-20">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="group relative rounded-[28px] p-[1px] overflow-hidden"
+            >
+              {/* Gradient Border */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-r ${card.glow} opacity-80`}
+              />
+
+              {/* Card Body */}
+              <div className="relative h-full rounded-[28px] bg-[#090f1d]/95 backdrop-blur-xl p-8 overflow-hidden">
+                {/* Glow */}
+                <div
+                  className={`absolute -top-20 right-0 w-60 h-60 bg-gradient-to-r ${card.glow} blur-[120px] opacity-20`}
+                />
+
+                {/* Badge */}
+                {card.badge && (
+                  <div className="absolute right-5 top-5">
+                    <span className="text-[10px] font-semibold tracking-widest px-3 py-1 rounded-full bg-gradient-to-r from-violet-500 to-blue-500 text-white">
+                      {card.badge}
+                    </span>
+                  </div>
+                )}
+
+                {/* Icon */}
+                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-300 mb-8">
+                  {card.icon}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-white text-3xl font-bold mb-5 leading-tight">
+                  {card.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-400 leading-8 text-[15px]">
+                  {card.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {card.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-4 py-2 text-sm rounded-full bg-white/[0.04] border border-white/10 text-gray-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Bottom Glow */}
