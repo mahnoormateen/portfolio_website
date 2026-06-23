@@ -4,7 +4,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="relative scroll-mt-15 min-h-screen overflow-hidden py-8 sm:py-10 px-4 sm:px-6 md:px-12"
+      className="relative scroll-mt-15 overflow-hidden py-12 sm:py-16 px-4 sm:px-6 md:px-12"
     >
       {/* Background Glow Effects */}
       <div className="absolute inset-0 overflow-hidden">

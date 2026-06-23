@@ -160,7 +160,7 @@ export default function AnimatedBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[#050505]"
+      className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-[#050505]"
     >
       {/* Base atmospheric layers */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.12),transparent_42%),radial-gradient(circle_at_20%_30%,rgba(0,212,255,0.09),transparent_32%),radial-gradient(circle_at_80%_70%,rgba(34,211,238,0.06),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_24%,rgba(255,255,255,0.01)_72%,transparent)] opacity-95" />
