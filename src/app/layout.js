@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AnimatedBackground from "../components/AnimatedBackground";
@@ -25,7 +26,12 @@ export default function RootLayout({ children }) {
     >
       <body className="relative min-h-full min-w-full overflow-x-hidden overflow-y-auto bg-[#050505] text-white">
         <AnimatedBackground />
-        <div className="relative z-10 flex min-h-screen flex-col">{children}</div>
+
+        <div className="relative z-10 flex min-h-screen flex-col">
+          {children}
+        </div>
+
+        <Analytics />
       </body>
     </html>
   );
