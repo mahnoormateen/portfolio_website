@@ -8,11 +8,14 @@ import Connections from "./connections";
 
 export default function Intro() {
   return (
-    <section className="min-h-screen flex items-center px-4 sm:px-6 md:px-12 lg:px-20 pt-24 sm:pt-28 lg:pt-30">
+    <section
+      id="home"
+      className="min-h-dvh flex items-center px-4 sm:px-6 md:px-12 lg:px-20 pt-28 sm:pt-32 lg:pt-36"
+    >
       {/* Stack on small screens and restore the original two-column hero at large sizes. */}
       <div className="max-w-7xl mx-auto w-full grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
         {/* Left Side */}
-        <div>
+        <div className="max-w-2xl">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
             Hello, I am
           </h1>
@@ -52,9 +55,12 @@ export default function Intro() {
             responsive web and mobile applications with modern technologies.
           </p>
 
-          <button className="mt-8 sm:mt-10 mb-8 sm:mb-10 px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white rounded-xl font-medium transition-all duration-300 text-sm sm:text-base">
+          <a
+            href="#projects"
+            className="mt-8 sm:mt-10 mb-8 sm:mb-10 inline-flex items-center justify-center rounded-xl bg-linear-to-r from-cyan-500 to-blue-500 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium text-white transition duration-300 hover:from-cyan-400 hover:to-blue-400"
+          >
             Explore My Work
-          </button>
+          </a>
 
           <Connections />
 
@@ -89,9 +95,9 @@ export default function Intro() {
 
         {/* Right Side */}
         <div className="flex justify-center lg:justify-end order-first lg:order-0">
-          <div className="relative group">
+          <div className="relative max-w-110 w-full group">
             {/* Background Glow */}
-            <div className="absolute -inset-6 sm:-inset-8 lg:-inset-10 bg-cyan-500/20 blur-[80px] rounded-full opacity-60 group-hover:opacity-100 transition-all duration-700"></div>
+            <div className="absolute -inset-6 sm:-inset-8 lg:-inset-10 bg-cyan-500/20 blur-[80px] rounded-full opacity-60 group-hover:opacity-100 transition-all duration-700" />
 
             {/* Neon Border Wrapper */}
             <div className="relative p-0.5 rounded-[30px] bg-linear-to-r from-cyan-400 via-blue-500 to-indigo-500">
@@ -101,12 +107,12 @@ export default function Intro() {
                 alt="Mahnoor Mateen"
                 width={420}
                 height={500}
-                className="relative w-70 sm:w-85 md:w-95 lg:w-105 h-85 sm:h-105 md:h-115 lg:h-125 object-cover rounded-[28px] bg-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.35)] transition-all duration-700 group-hover:scale-[1.03] group-hover:-translate-y-3"
+                className="relative w-full h-85 sm:h-100 md:h-115 lg:h-130 object-cover rounded-[28px] bg-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.35)] transition-all duration-700 group-hover:scale-[1.03] group-hover:-translate-y-3"
               />
             </div>
 
             {/* Extra Border Glow */}
-            <div className="absolute inset-0 rounded-[30px] border border-cyan-400/40 shadow-[0_0_20px_rgba(34,211,238,0.6),0_0_40px_rgba(59,130,246,0.3)] pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-[30px] border border-cyan-400/40 shadow-[0_0_20px_rgba(34,211,238,0.6),0_0_40px_rgba(59,130,246,0.3)] pointer-events-none" />
           </div>
         </div>
       </div>

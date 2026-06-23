@@ -2,105 +2,111 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { SiMcdonalds } from "react-icons/si";
 import ResumeButton from "./resume";
+
+const navItems = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Education" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+      setScrolled(window.scrollY > 60);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
+  const handleLinkClick = () => setMenuOpen(false);
+
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-black/70 backdrop-blur-xl border-b border-cyan-500/10 py-3"
-          : "bg-transparent py-5"
+          ? "bg-black/60 backdrop-blur-xl border-b border-white/10 py-3"
+          : "bg-transparent border-b border-transparent py-4"
       }`}
     >
-      <nav className="max-w-7xl mx-auto flex flex-col gap-3 px-4 sm:px-6 lg:px-15 md:flex-row md:items-center md:justify-between md:gap-0">
-        {/* Logo */}
-        <div className="flex w-full items-center justify-between md:w-auto">
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-blue-500/60 flex items-center justify-center bg-[#0a0c18] shrink-0">
-            <span className="text-blue-400 font-semibold text-base sm:text-lg">M</span>
+      <nav className="relative max-w-7xl mx-auto flex flex-col gap-3 px-4 py-0 sm:px-6 md:px-8">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="#home" className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-400/20 bg-[#0a0c18] text-lg font-semibold text-cyan-300 shadow-lg shadow-cyan-500/10">
+              M
+            </div>
+            <span className="text-sm font-semibold tracking-wide text-white/90">
+              Mahnoor Mateen
+            </span>
+          </Link>
+
+          {/* Center Navigation */}
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 text-gray-300 text-sm font-medium">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={handleLinkClick}
+                className="transition hover:text-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
 
-          {/* Mobile navigation keeps the section links accessible without changing the desktop header. */}
-          <ul className="flex md:hidden items-center gap-3 overflow-x-auto whitespace-nowrap text-[11px] text-gray-300 font-medium no-scrollbar">
-            <li>
-              <Link href="#home" className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 hover:text-cyan-400 transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="#about" className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 hover:text-cyan-400 transition">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="#projects" className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 hover:text-cyan-400 transition">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="#education" className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 hover:text-cyan-400 transition">
-                Education
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 hover:text-cyan-400 transition">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
+          {/* Right Side */}
+          <div className="flex items-center gap-3">
+            <div className="hidden md:flex items-center">
+              <ResumeButton className="text-white text-sm shadow-sm shadow-cyan-500/10" />
+            </div>
 
-        {/* Navigation Menu */}
-        <ul className="hidden md:flex items-center gap-8 text-gray-300 font-medium">
-          <li>
-            <Link href="#home" className="hover:text-cyan-400 transition">
-              Home
-            </Link>
-          </li>
-
-          <li>
-            <Link href="#about" className="hover:text-cyan-400 transition">
-              About
-            </Link>
-          </li>
-
-          <li>
-            <Link href="#projects" className="hover:text-cyan-400 transition">
-              Projects
-            </Link>
-          </li>
-
-          <li>
-            <Link href="#education" className="hover:text-cyan-400 transition">
-              Education
-            </Link>
-          </li>
-
-          <li>
-            <Link href="#contact" className="hover:text-cyan-400 transition">
-              Contact
-            </Link>
-          </li>
-        </ul>
-
-        {/* Resume Button */}
-        <div className="flex w-full items-center justify-end gap-3 sm:gap-5 md:w-auto">
-          <ResumeButton
-            size={scrolled ? 22 : 26}
-            className="text-white cursor-pointer transition-all text-sm sm:text-base"
-          />
+            <button
+              type="button"
+              aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
+              onClick={() => setMenuOpen((current) => !current)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:border-cyan-300/30 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black md:hidden"
+            >
+              <span className="relative block h-5 w-5">
+                <span
+                  className={`absolute left-0 top-1/2 block h-0.5 w-full bg-current transition-transform duration-300 ${
+                    menuOpen ? "rotate-45" : "-translate-y-1.5"
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 top-1/2 block h-0.5 w-full bg-current transition-opacity duration-300 ${
+                    menuOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 top-1/2 block h-0.5 w-full bg-current transition-transform duration-300 ${
+                    menuOpen ? "-rotate-45" : "translate-y-1.5"
+                  }`}
+                />
+              </span>
+            </button>
+          </div>
         </div>
       </nav>
     </header>

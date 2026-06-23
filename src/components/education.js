@@ -54,7 +54,7 @@ export default function Education() {
               </h3>
 
               <p className="text-gray-400 text-sm sm:text-[16px]">
-                Superior University,Lahore
+                Superior University, Lahore
               </p>
             </div>
           </div>
@@ -80,8 +80,8 @@ export default function Education() {
               </h3>
 
               <p className="text-gray-400 text-sm sm:text-[16px] leading-relaxed">
-                Tracking the AI / agentic frontier — papers, MCP server
-                building, weekend agent demos.
+                Building responsive, modern web experiences with React, Next.js,
+                and clean UI design.
               </p>
             </div>
           </div>

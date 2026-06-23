@@ -5,7 +5,7 @@ export default function ResumeButton({ className = "" }) {
     <a
       href="/MahnoorMateen-Resume.pdf"
       download
-      className={`flex items-center gap-2 sm:gap-3 bg-transparent text-gray-200 font-small transition-all duration-300 whitespace-nowrap ${className}`}
+      className={`flex items-center gap-2 sm:gap-3 rounded-full border border-white/20 bg-white/10 px-4 sm:px-6 py-2.5 sm:py-3 backdrop-blur-xl text-gray-200 font-medium transition-all duration-300 whitespace-nowrap hover:bg-white/15 hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black ${className}`}
     >
       {/* Icon */}
       <svg

@@ -60,7 +60,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative scroll-mt-10 min-h-screen text-white px-4 sm:px-6 md:px-12 py-10 sm:py-14 overflow-hidden"
+      className="relative scroll-mt-10 min-h-screen text-white px-4 sm:px-6 md:px-12 py-2 sm:py-14 overflow-hidden"
     >
       {/* Background Glow */}
       <div className="absolute inset-0">
