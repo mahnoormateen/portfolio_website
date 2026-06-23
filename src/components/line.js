@@ -15,16 +15,15 @@ export default function Line() {
     overflow: "hidden",
     borderTop: "1px solid rgba(255, 255, 255, 0.1)",
     borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-    paddingTop: "32px",
-    paddingBottom: "32px",
-    marginTop: "32px",
+    paddingTop: "24px",
+    paddingBottom: "24px",
+    marginTop: "24px",
   };
 
   const marqueeStyle = {
     display: "flex",
     alignItems: "center",
     width: "max-content",
-    animation: "marquee 40s linear infinite",
     willChange: "transform",
   };
 
@@ -36,9 +35,9 @@ export default function Line() {
   };
 
   const skillStyle = {
-    marginLeft: "40px",
-    marginRight: "40px",
-    fontSize: "18px",
+    marginLeft: "24px",
+    marginRight: "24px",
+    fontSize: "16px",
     fontWeight: 600,
     color: "#d1d5db",
   };
@@ -53,7 +52,7 @@ export default function Line() {
 
   return (
     <div style={outerStyle}>
-      <div style={marqueeStyle}>
+      <div style={marqueeStyle} className="marquee">
         {[...skills, ...skills].map((skill, index) => (
           <div key={index} style={itemStyle}>
             <span style={skillStyle}>{skill}</span>
@@ -61,16 +60,6 @@ export default function Line() {
           </div>
         ))}
       </div>
-      <style jsx global>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </div>
   );
 }

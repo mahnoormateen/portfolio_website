@@ -2,6 +2,7 @@ import About from "@/components/about";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Contact from "@/components/contact";
 import Education from "@/components/education";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Intro from "@/components/Intro";
 import Line from "@/components/line";
@@ -13,7 +14,6 @@ export default function Home() {
       <AnimatedBackground />
       
       <Header />
-      {/* link correction krni h */}
       <Intro />
 
       <Line />
@@ -21,6 +21,7 @@ export default function Home() {
       <Projects />
       <Education />
       <Contact />
+      <Footer />
     </div>
   );
 }

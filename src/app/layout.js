@@ -23,7 +23,8 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="relative min-h-full overflow-hidden bg-[#050505] text-white">
+      {/* Keep horizontal overflow clipped, but let the page scroll naturally on small screens. */}
+      <body className="relative min-h-full overflow-x-hidden overflow-y-auto bg-[#050505] text-white">
         <AnimatedBackground />
         <div className="relative z-10 flex min-h-screen flex-col">{children}</div>
       </body>

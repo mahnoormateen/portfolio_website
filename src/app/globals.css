@@ -27,17 +27,18 @@ body {
 }
 
 
+
+
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
+  from {
+    transform: translateX(0);
   }
 
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
 
 .marquee {
-  width: max-content;
-  animation: marquee 20s linear infinite;
+  animation: marquee 36s linear infinite;
 }

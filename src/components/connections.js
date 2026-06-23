@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
@@ -8,11 +9,11 @@ function Connections() {
   const wrapperStyle = {
     display: "flex",
     alignItems: "center",
-    gap: "20px",
-    marginTop: "24px",
-    flexWrap: "wrap",
+    gap: "12px",
     maxWidth: "100%",
     overflowX: "hidden",
+    flexWrap: "wrap",
+    justifyContent: "center",
   };
 
   const getButtonStyle = (isHovered) => ({
