@@ -40,7 +40,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative min-h-screen overflow-hidden px-4 sm:px-6 pt-8 pb-20 sm:pb-24 lg:pb-30"
+      className="relative scroll-mt-20 min-h-screen overflow-hidden px-4 sm:px-6  pb-20 sm:pb-24 lg:pb-30"
     >
       {/* Top Line */}
       {/* <div className="absolute top-0 left-0 w-full h-px bg-white/10" /> */}
@@ -60,7 +60,6 @@ export default function Projects() {
             architected
           </span>
         </h2>
-
 
         {/* Cards */}
         <div className="grid gap-6 mt-12 sm:mt-16 lg:grid-cols-3">

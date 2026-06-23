@@ -60,12 +60,12 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative min-h-screen text-white px-4 sm:px-6 md:px-12 py-10 sm:py-14 overflow-hidden"
+      className="relative scroll-mt-10 min-h-screen text-white px-4 sm:px-6 md:px-12 py-10 sm:py-14 overflow-hidden"
     >
       {/* Background Glow */}
       <div className="absolute inset-0">
-        <div className="absolute top-28 sm:top-40 left-1/2 -translate-x-1/2 w-72 h-72 sm:w-125 sm:h-125 bg-blue-500/10 blur-[180px]" />
-        <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-100 sm:h-100 bg-cyan-500/10 blur-[180px]" />
+        <div className="absolute top-28 sm:top-40 left-1/2 -translate-x-1/2 w-72 h-72 sm:w-125 sm:h-125 blur-[180px]" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-100 sm:h-100  blur-[180px]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto">
@@ -86,12 +86,13 @@ export default function Contact() {
           </h2>
 
           <p className="max-w-3xl mx-auto mt-5 sm:mt-6 text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed">
-            Always up for a deep conversation about{" "}
+            Always excited to discuss{" "}
             <span className="font-semibold text-gray-300">
-              agent skills, subagents, MCP servers,
+              frontend development, modern web technologies, AI-powered
+              applications, and innovative digital experiences
             </span>
-            design systems, or anything where AI meets the frontend. Drop a line
-            — I read every message.
+            . Whether it is a project idea, collaboration opportunity, or just a
+            tech conversation, feel free to reach out — I would love to connect.
           </p>
         </div>
 

@@ -35,27 +35,27 @@ export default function Header() {
           {/* Mobile navigation keeps the section links accessible without changing the desktop header. */}
           <ul className="flex md:hidden items-center gap-3 overflow-x-auto whitespace-nowrap text-[11px] text-gray-300 font-medium no-scrollbar">
             <li>
-              <Link href="#home" className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 hover:text-cyan-400 transition">
+              <Link href="#home" className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 hover:text-cyan-400 transition">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="#about" className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 hover:text-cyan-400 transition">
+              <Link href="#about" className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 hover:text-cyan-400 transition">
                 About
               </Link>
             </li>
             <li>
-              <Link href="#projects" className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 hover:text-cyan-400 transition">
+              <Link href="#projects" className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 hover:text-cyan-400 transition">
                 Projects
               </Link>
             </li>
             <li>
-              <Link href="#education" className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 hover:text-cyan-400 transition">
+              <Link href="#education" className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 hover:text-cyan-400 transition">
                 Education
               </Link>
             </li>
             <li>
-              <Link href="#contact" className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 hover:text-cyan-400 transition">
+              <Link href="#contact" className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 hover:text-cyan-400 transition">
                 Contact
               </Link>
             </li>
@@ -99,7 +99,7 @@ export default function Header() {
         <div className="flex w-full items-center justify-end gap-3 sm:gap-5 md:w-auto">
           <ResumeButton
             size={scrolled ? 22 : 26}
-            className="text-yellow-300 cursor-pointer transition-all text-sm sm:text-base"
+            className="text-white cursor-pointer transition-all text-sm sm:text-base"
           />
         </div>
       </nav>

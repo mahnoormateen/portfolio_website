@@ -4,7 +4,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="relative min-h-screen overflow-hidden py-8 sm:py-10 px-4 sm:px-6 md:px-12"
+      className="relative scroll-mt-15 min-h-screen overflow-hidden py-8 sm:py-10 px-4 sm:px-6 md:px-12"
     >
       {/* Background Glow Effects */}
       <div className="absolute inset-0 overflow-hidden">
@@ -42,9 +42,7 @@ export default function Education() {
             <div className="absolute inset-0 rounded-3xl bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Shine Effect */}
-            <div
-              className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 "
-            />
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 " />
 
             <div className="relative z-10">
               <p className="text-cyan-400 text-xs sm:text-[15px] tracking-[2px] mb-4 sm:mb-5">
@@ -70,9 +68,7 @@ export default function Education() {
             <div className="absolute inset-0 rounded-3xl bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Shine Effect */}
-            <div
-              className="absolute inset-0  bg-linear-to-r from-transparent via-white/5  to-transparent  -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
-            />
+            <div className="absolute inset-0  bg-linear-to-r from-transparent via-white/5  to-transparent  -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
 
             <div className="relative z-10">
               <p className="text-cyan-400 text-xs sm:text-[15px] tracking-[2px] uppercase mb-4 sm:mb-5">

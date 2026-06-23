@@ -48,7 +48,7 @@ export default function Intro() {
           </div>
 
           <p className="mt-6 sm:mt-8 text-sm sm:text-base lg:text-lg text-white leading-relaxed max-w-xl">
-            Backend Developer, Flutter Developer and AI Enthusiast building
+            Full Stack Developer, Flutter Developer and AI Enthusiast building
             responsive web and mobile applications with modern technologies.
           </p>
 

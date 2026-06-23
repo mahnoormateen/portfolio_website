@@ -13,7 +13,7 @@ function Connections() {
     maxWidth: "100%",
     overflowX: "hidden",
     flexWrap: "wrap",
-    justifyContent: "center",
+    justifyContent: "flex-start", // change this
   };
 
   const getButtonStyle = (isHovered) => ({
