@@ -108,6 +108,30 @@ export default function Header() {
             </button>
           </div>
         </div>
+        {/* Mobile Menu */}
+        <div
+          id="mobile-navigation"
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            menuOpen ? "max-h-[400px] opacity-100 mt-3" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="rounded-3xl border border-white/10 bg-black/90 backdrop-blur-xl p-4 space-y-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={handleLinkClick}
+                className="block rounded-xl px-4 py-3 text-sm font-medium text-gray-200 hover:bg-white/5 hover:text-cyan-300 transition"
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            <div className="pt-2">
+              <ResumeButton className="w-full justify-center" />
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
   );
